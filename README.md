@@ -55,3 +55,7 @@ php app/console fos:user:activate`
 Se abrirá la aplicación en Localhost:8000 en el navegador
 - Detener los servicios basta con Ctrl + C y 
      `php app/console server:stop`
+
+###Ficheros importantes
+-src/AppBundle --backend
+-src/AppBundle/Resources/public --frontend Angular
