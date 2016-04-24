@@ -26,10 +26,13 @@
 ###Instalación
 
 - Clonar repositorio
-     `git clone https://github.com/Irvandoval/asignaturas.git`
+     
+`git clone https://github.com/Irvandoval/asignaturas.git`
 - Entrar a la carpeta y actualizar dependencias Composer
-     `cd asignaturas`
-     `composer install`
+     
+`cd asignaturas`
+     
+`composer install`
 - Instalar dependencias node y bower
      `npm install`
      `bower install`
