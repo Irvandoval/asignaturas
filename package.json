@@ -1,0 +1,32 @@
+{
+  "name": "asignaturas",
+  "version": "0.0.1",
+  "description": "asignaturas de horarios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlyersWeb/angular-symfony.git"
+  },
+  "keywords": [
+    "asignaturas",
+    "horarios",
+    "bad115"
+  ],
+  "author": "Irvin Sandoval",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/FlyersWeb/angular-symfony/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.1",
+    "gulp-connect-php": "0.0.7",
+    "gulp-inject": "^4.0.0",
+    "gulp-shell": "^0.5.2",
+    "main-bower-files": "^2.11.1",
+    "stream-series": "^0.1.1"
+  }
+}
