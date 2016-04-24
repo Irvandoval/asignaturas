@@ -20,6 +20,8 @@
  Instalar dependencias nodejs a utilizar
       `sudo npm install -g gulp bower`
  - PHP 5 +
+ 
+     `sudo apt-get install php5 php5-pgsql`
  - Composer [Instalacion en Ubuntu hasta paso 2](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-14-04)
  
 ###Instalación
