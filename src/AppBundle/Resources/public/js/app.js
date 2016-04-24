@@ -7,7 +7,7 @@
     'ngCookies',
     'ngResource'
    ])
-   
+
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
      /* $routeProvider.when('/login', {templateUrl: '/bundles/app/partials/login.html', controller: 'Login'});
       $routeProvider.when('/view1', {templateUrl: '/bundles/app/partials/partial1.html', controller: 'MyCtrl1'});
@@ -17,7 +17,8 @@
       $stateProvider
         .state('home', {
           url: '/home',
-          templateUrl: "/bundles/app/partials/home.html"
+          templateUrl: "/bundles/app/partials/home.html",
+          controller: 'MyCtrl2'
         })
 
         .state('login', {
