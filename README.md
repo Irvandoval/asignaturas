@@ -36,15 +36,25 @@
      `composer install`
      
      `database_driver (pdo_mysql): pdo_pgsql
+    
      database_host (127.0.0.1): 
+     
      database_port (null): 5432
+     
      database_name (symfony): asignaturas
+     
      database_user (root): postgres
+     
      database_password (root): postgres
+     
      mailer_transport (smtp): 
+     
      mailer_host (127.0.0.1): 
+     
      mailer_user (null): 
+     
      mailer_password (null): 
+     
      locale (en): es
      `
 - Instalar dependencias node y bower
