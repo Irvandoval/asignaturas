@@ -2,10 +2,9 @@
 
 ###Requerimientos
 
- - PostgreSQL (crear usuario  y pass postgres, una base llamada *asignaturas*)
  - Linux (Ubuntu, Debian o derivados)
+ - PostgreSQL (crear usuario  y pass postgres, una base llamada *asignaturas*)
  - Git
-
 
     `sudo apt-get install git`
 
@@ -48,14 +47,15 @@ php app/console fos:user:activate`
 - Correr servidor de pruebas
 
      `php app/console server:start`
-- Iniciar servidor Browser Sync (para que se actualize automaticamente el browser al haber cambios)
+- Agregar dependencias al index, copiar assets a la carpeta web, iniciar servidor Browser Sync (para que se actualize automaticamente el browser al haber cambios)
 
      `gulp serve`
 
 Se abrirá la aplicación en Localhost:8000 en el navegador
 - Detener los servicios basta con Ctrl + C y 
+
      `php app/console server:stop`
 
-###Ficheros importantes
+###Directorios importantes
 - src/AppBundle --backend
 - src/AppBundle/Resources/public --frontend Angular
