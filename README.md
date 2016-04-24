@@ -57,5 +57,5 @@ Se abrirá la aplicación en Localhost:8000 en el navegador
      `php app/console server:stop`
 
 ###Ficheros importantes
--src/AppBundle --backend
--src/AppBundle/Resources/public --frontend Angular
+- src/AppBundle --backend
+- src/AppBundle/Resources/public --frontend Angular
