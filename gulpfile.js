@@ -18,7 +18,7 @@ gulp.task('index', function(){
       addRootSlash: false,
       transform: transformFilePath
   }))
-    .pipe(gulp.dest('./web'));
+    .pipe(gulp.dest('./src/AppBundle/Resources/views/Default/'));
 });
 
 
@@ -39,7 +39,8 @@ gulp.task('connect', function() {
     './src/*/Resources/public/js/components/**/*.js',
     './src/*/Resources/public/**/*.html',
     './src/*/Resources/public/js/partials/*.html'], ['installAssets'])
-       .on('change', function(){
+       .on('change', function(event){
+         console.log('modificado: ' + event.path);
          browserSync.reload();
        });
 });
