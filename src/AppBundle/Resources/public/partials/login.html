@@ -1,11 +1,7 @@
 <navbar></navbar>
 <div class="container">
- <p>This is the partial for login.</p>
- <p ng-show="salt"><strong>{{ username }}</strong> salt is <em>{{ salt }}</em></p>
- <p ng-show="secret"><strong>{{ username }}</strong> generated secret is <em>{{ secret }}</em></p>
- <p ng-show="secret">You should now have access to API because your're logged in</p>
-
- <p>Please enter a symfony valid user : </p>
+ <h2>Ingresa tu usuario y contraseña : </h2>
+ <br><br>
  <form ng-submit="getSalt()" class="form-horizontal">
   <div class="form-group">
     <label for="user">Nombre de usuario:</label>
@@ -16,6 +12,6 @@
   <input name="password" class="form-control" type="password" ng-model="password"  size="30" placeholder="contraseña">
  </div>
 
- <input class="btn btn-primary" type="submit" value="login">
+ <input class="btn btn-primary" type="submit" value="Acceder">
  </form>
 </div>

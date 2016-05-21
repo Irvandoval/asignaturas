@@ -5,7 +5,8 @@
     'ui.bootstrap',
     'ui.router',
     'ngCookies',
-    'ngResource'
+    'ngResource',
+    'ngTable'
    ])
 
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
@@ -25,6 +26,12 @@
           url: '/login',
           templateUrl: '/bundles/app/partials/login.html',
           controller: 'Login'
+        })
+
+        .state('facultades', {
+          url: '/facultades',
+          templateUrl: '/bundles/app/partials/facultades.html',
+          controller: "FacultadController as fc"
         });
     }]);
 })();

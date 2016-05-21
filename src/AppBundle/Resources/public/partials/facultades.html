@@ -1,0 +1,30 @@
+<navbar></navbar>
+<div class="container">
+ <div class="panel panel-danger">
+   <div class="panel-heading">
+    <div class="row">
+       <div class="col-md-10">
+         <h4>Facultades</h4>
+       </div>
+       <div class="col-md-2" ng-if="true">
+         <button class="btn btn-success btn-sm" ng-click="fc.newFacultad()" type="button">
+           <span aria-hidden="true" class="fa fa-plus-circle"></span>
+           Nueva Facultad
+         </button>
+       </div>
+     </div>
+   </div>
+   <div class="table-responsive">
+    <table class="table table-striped" ng-table="fc.facultadesTable" class="table" showfilter="true">
+      <tr ng-repeat="facultad in $data">
+         <td class="text-center" title="'#'">{{$index + 1}}</td>
+         <td class="text-center" title="'Nombre'">{{facultad.nombre}}</td>
+         <td class="text-center" title="'Acciones'">
+           <button class="btn btn-success btn-sm"> Editar</button>
+          <button class="btn btn-danger btn-sm" ng-click="fc.deleteFacultad(facultad.idFacultad)">Eliminar</button>
+         </td>
+      </tr>
+    </table>
+   </div>
+ </div>
+</div>

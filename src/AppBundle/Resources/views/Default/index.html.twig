@@ -2,18 +2,14 @@
 <html lang="es" ng-app="asigApp">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Asignaturas</title>
-   <link rel="stylesheet" href="bundles/app/css/app.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="bundles/app/css/app.css" media="screen" title="no title" charset="utf-8">
   <link rel="stylesheet" href="bundles/app/lib/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
- <!-- inject:css -->
- <!-- endinject -->
+  <link rel="stylesheet" href="bundles/app/lib/ng-table/dist/ng-table.min.css">
 </head>
 <body>
   <div ui-view></div>
-  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha1.js"></script>
-  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha512.js"></script>
-  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
   -->
@@ -32,18 +28,27 @@
   <script src="{{ asset('bundles/app/js/directives.js') }}"></script>
   -->
   <!-- inject:js -->
+  <script src="bundles/app/js/crypt/md5.js"></script>
+  <script src="bundles/app/js/crypt/sha1.js"></script>
+  <script src="bundles/app/js/crypt/sha512.js"></script>
+  <script src="bundles/app/js/crypt/enc-base64-min.js"></script>
   <script src="bundles/app/lib/angular/angular.js"></script>
   <script src="bundles/app/lib/angular-resource/angular-resource.js"></script>
   <script src="bundles/app/lib/angular-cookies/angular-cookies.js"></script>
   <script src="bundles/app/lib/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bundles/app/lib/jquery/dist/jquery.js"></script>
   <script src="bundles/app/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bundles/app/lib/ng-table/dist/ng-table.min.js"></script>
   <script src="bundles/app/lib/bootstrap/dist/js/bootstrap.js"></script>
   <script src="bundles/app/js/app.js"></script>
   <script src="bundles/app/js/controllers.js"></script>
   <script src="bundles/app/js/directives.js"></script>
   <script src="bundles/app/js/filters.js"></script>
   <script src="bundles/app/js/services.js"></script>
+  <script src="bundles/app/js/components/auth/authService.js"></script>
+  <script src="bundles/app/js/components/auth/userService.js"></script>
+  <script src="bundles/app/js/components/facultades/facultadController.js"></script>
+  <script src="bundles/app/js/components/facultades/facultadService.js"></script>
   <script src="bundles/app/js/components/navbar/navbarComponent.js"></script>
   <script src="bundles/app/js/components/navbar/navbarController.js"></script>
   <!-- endinject -->

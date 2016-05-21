@@ -11,14 +11,16 @@ var BUNDLE_PUBLIC_ASSETS= './src/AppBundle/Resources/public';
 gulp.task('index', function(){
   var target = gulp.src('./src/AppBundle/Resources/views/Default/index.html.twig');
   var bowerStream = gulp.src(bowerFiles(), {base: BUNDLE_PUBLIC_ASSETS + '/lib'});
-  var appStream = gulp.src([BUNDLE_PUBLIC_ASSETS + '/js/*.js', BUNDLE_PUBLIC_ASSETS + '/js/*/*.js', BUNDLE_PUBLIC_ASSETS + '/js/*/*/*.js' ], {read: false});
+  var cryptoStream = gulp.src(['!' + BUNDLE_PUBLIC_ASSETS + '/js/crypt/enc-base64-min.js', BUNDLE_PUBLIC_ASSETS + '/js/crypt/*.js'],{read: false});
+  var encCryptoStream = gulp.src([ BUNDLE_PUBLIC_ASSETS + '/js/crypt/enc-base64-min.js'],{read: false});
+  var appStream = gulp.src(['!' + BUNDLE_PUBLIC_ASSETS + '/js/crypt/*.js', BUNDLE_PUBLIC_ASSETS + '/js/*.js', BUNDLE_PUBLIC_ASSETS + '/js/*/*.js', BUNDLE_PUBLIC_ASSETS + '/js/*/*/*.js' ], {read: false});
 
   return target
-    .pipe(inject(series(bowerStream, appStream), {
+    .pipe(inject(series(cryptoStream, encCryptoStream,bowerStream , appStream), {
       addRootSlash: false,
       transform: transformFilePath
   }))
-    .pipe(gulp.dest('./web'));
+    .pipe(gulp.dest('./src/AppBundle/Resources/views/Default/'));
 });
 
 

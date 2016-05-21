@@ -2,7 +2,7 @@
 (function(){
  'use strict';
  angular.module('asigApp')
- .controller('Login', ['$rootScope', '$scope', '$window', '$cookies', 'Salt', 'Digest', function($rootScope, $scope, $window, $cookies, Salt, Digest) {
+ .controller('Login', ['$rootScope', 'Auth', '$scope', '$window', '$cookies', 'Salt','$http', '$state', function($rootScope, Auth, $scope, $window, $cookies, Salt, $http, $state) {
      // On Submit function
      $scope.getSalt = function() {
          var username = $scope.username;
@@ -11,14 +11,19 @@
          Salt.get({username:username}, function(data){
              var salt = data.salt;
              // Encrypt password accordingly to generate secret
-             Digest.cipher(password, salt).then(function(secret){
+                 Auth.cipher(password, salt).then(function(secret){
                  // Display salt and secret for this example
                  $scope.salt = salt;
                  $scope.secret = secret;
-                 // Store auth informations in cookies for page refresh
                  $cookies.put('username',$scope.username);
                  $cookies.put('secret', secret);
                  $cookies.put('salt', $scope.salt);
+                 // Store auth informations in cookies for page refresh
+                 Auth.getUser($scope.username, function(err, user){
+                   if(!err){ $state.go('home')}
+
+                 });
+
                  // Store auth informations in rootScope for multi views access
                  $rootScope.userAuth = {username: $scope.username, secret : $scope.secret, salt : $scope.salt };
              }, function(err){

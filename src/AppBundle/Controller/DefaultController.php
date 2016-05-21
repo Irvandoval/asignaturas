@@ -36,7 +36,7 @@ class DefaultController extends Controller
             throw new HttpException(400, "Error User Not Found");
         }
 
-        return new JsonResponse(array('salt' => $user->getSalt()));
+        return new JsonResponse(array('salt' => $user->getSalt(), 'username' => $user->getUsername()));
     }
 
     /**

@@ -6,7 +6,7 @@
  // Demonstrate how to register services
  // In this case it is a simple value service.
  angular.module('asigApp')
- .factory('TokenHandler', [ '$http', 'Base64', function($http, Base64) {
+ .factory('TokenHandler', [ '$http', 'Base64', '$cookies', function($http, Base64, $cookies) {
      var tokenHandler = {};
      var token = 'none';
 
@@ -50,10 +50,10 @@
      // Token Reinitializer
      tokenHandler.clearCredentials = function () {
          // Clear token from cache
-         $cookieStore.remove('username');
-         $cookieStore.remove('digest');
-         $cookieStore.remove('nonce');
-         $cookieStore.remove('created');
+         $cookies.remove('username');
+         $cookies.remove('digest');
+         $cookies.remove('nonce');
+         $cookies.remove('created');
 
          // Clear token variable
          delete $http.defaults.headers.common['X-WSSE'];

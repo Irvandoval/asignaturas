@@ -2,7 +2,7 @@
  'use strict';
 
  angular.module('asigApp')
-   .controller('NavbarCtrl', function ($location, Auth) {
+   .controller('NavbarCtrl', function ($location, Auth, TokenHandler, $state) {
      var self = this;
      self.menu = [{
        'title': 'Home',
@@ -14,14 +14,15 @@
      self.isCollapsed = true;
      self.isLoggedIn = Auth.isLoggedIn;
      self.isAdmin = Auth.isAdmin;
-     self.isDocente = Auth.isDocente;
+   /*  self.isDocente = Auth.isDocente;
      self.isRepresentante = Auth.isRepresentante;
-     self.isInvitado = Auth.isInvitado;
+     self.isInvitado = Auth.isInvitado;*/
      self.getCurrentUser = Auth.getCurrentUser;
+    
 
      self.logout = function() {
-       Auth.logout();
-       $location.path('/login');
+       TokenHandler.clearCredentials();
+       $state.go('login');
      };
 
      self.isActive = function(route) {
